@@ -1,74 +1,87 @@
-<!--
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
--->
+<div *ngIf="user">
+  <div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+        <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i>
+          {{user.username}}
+        </span>
 
-<div class="container">
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-					<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						Ahmed Aldhaheri
-					</div>
-					<div class="profile-usertitle-job">
-						Parent
-					</div>
-				</div>
-				<!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR BUTTONS -->
+        <h5>Change your profile information below</h5>
+        <div class="form-group">
 
-				<!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
-						</li>
-						<li>
-							<a routerLink="/profile/edit">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
-						</li>
-						<li>
-							<a href="#">
-              <details>
-				         <summary>Actions</summary>
-                 <a>Make Payment</a><br>
-                 <a routerLink="/child/add">Add Child</a><br>
-                 <a routerLink="/courses">Register Course</a>
-              </details></a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
-						</li>
-					</ul>
-				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
+            <label class="cols-sm-2 control-label">First Name</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <input type="text" class="form-control"
+                  [(ngModel)]="user.firstname"  placeholder="firstname"/>
+              </div>
+            </div>
 
-		<div class="col-md-9">
-      <select name="cars" calss="form-control">
-      <option value="volvo">Child</option>
-      <option value="saab">Ahmed Aldhaheri</option>
-      <option value="fiat">Moe Aldhaheri</option>
-    </select>
+            <label class="cols-sm-2 control-label">Last Name</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"
+                    [(ngModel)]="user.lastname"  placeholder="lastname"/>
+                </div>
+            </div>
 
-   </div>
+            <label class="cols-sm-2 control-label">Phone</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"
+                    [(ngModel)]="user.phoneNumber"  placeholder="phoneNumber"/>
+                </div>
+            </div>
+
+            <label class="cols-sm-2 control-label">Addressline 1</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"
+                    [(ngModel)]="user.address.addressLine1"  placeholder="address line 1"/>
+                </div>
+            </div>
+
+            <label class="cols-sm-2 control-label">Addressline 2</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"
+                    [(ngModel)]="user.address.addressLine2"  placeholder="address line 2"/>
+                </div>
+            </div>
+
+            <label class="cols-sm-2 control-label">City</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-building-o" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"
+                    [(ngModel)]="user.address.city"  placeholder="city"/>
+                </div>
+            </div>
+
+            <label class="cols-sm-2 control-label">State</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
+                  <select [(ngModel)]="user.state" class="form-control">
+                    <option *ngFor="let key of keys" [ngValue]="key">{{states[key]}}</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <button (click)="updateUser()" id="button" class="btn btn-primary btn-lg btn-block login-button">Update</button>
+            </div>
+
+            <div>
+              {{user._links.self.href}}
+            </div>
+            
+        </div>
+    </div>
+  </div>
 </div>
-
-
-<br>
-<br>

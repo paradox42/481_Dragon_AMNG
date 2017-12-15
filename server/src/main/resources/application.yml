@@ -25,9 +25,10 @@ spring:
 #    url: jdbc:mysql://whiletruedb.cbyi87n6etmg.us-east-2.rds.amazonaws.com/prototype?characterEncoding=utf8
 #    username: whiletrue
 #    password: emichCS3
-    url: jdbc:mysql://localhost/prototype?characterEncoding=utf8
-    username: root
-    password: Liuli512104
+    url: jdbc:mysql://test1.cwjsmxczwg0g.us-west-2.rds.amazonaws.com/prototype
+    username: dragon
+    password: teamdragon
+    
 
   # ===============================
   # = SPRING DATA REST CONFIG

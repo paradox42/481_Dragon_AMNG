@@ -77,7 +77,7 @@ export class EditableTableComponent {
     if (window.confirm('Are you sure you want to save?')) {
       // event.newData['name'] += ' + added in code';
       event.confirm.resolve(event.newData);
-      this.programService.updateProgram(event.data)
+      this.programService.updateProgram(event.newData)
         .subscribe(_ => this.getAllPrograms());
     } else {
       event.confirm.reject();

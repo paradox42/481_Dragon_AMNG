@@ -41,7 +41,6 @@ import {CanActivateAuthGuard} from './shared/guard/can-active.authguard';
 import {TeacherAuthguard} from './shared/guard/teacher.authguard';
 import {AdminAuthguard} from './shared/guard/admin.authguard';
 import { ChildComponent } from './component/content/child/child.component';
-import { ProfileEditComponent } from './component/content/profile/profile-edit/profile-edit.component';
 import { AddChildComponent } from './component/content/child/add-child/add-child.component';
 import { CourseRegistrationComponent } from './component/content/courses/course-registration/course-registration.component';
 import { CoursesComponent } from './component/content/courses/courses.component';
@@ -64,7 +63,6 @@ import {SharedPipesModule} from './shared/pipes/shared-pipes.module';
     AboutComponent,
     ProfileComponent,
     ChildComponent,
-    ProfileEditComponent,
     AddChildComponent,
     CourseRegistrationComponent,
     CoursesComponent,
